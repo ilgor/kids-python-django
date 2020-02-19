@@ -17,11 +17,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Local 
+    # Third party
+    'rest_framework',
+    'knox',
+
+    # Local
     'users.apps.UsersConfig',
+    'leads.apps.LeadsConfig',
+    'frontend.apps.FrontendConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,7 +70,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'db',
+        # 'HOST': 'db',
         'PORT': 5432
     }
 }
