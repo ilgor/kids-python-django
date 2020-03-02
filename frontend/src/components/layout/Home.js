@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
+import { UnControlled as CodeMirror } from "react-codemirror2";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/material.css";
 
 export class Home extends Component {
   render() {
+    const code = "const a = 0;";
     return (
       <div className="mt-5">
         <div className="row">
@@ -53,13 +57,23 @@ export class Home extends Component {
             </div>
           </div>
           <div className="col-sm-6">
-            <div className="text-center">
+            <CodeMirror
+              value="print('Hello World!')"
+              options={{
+                mode: "python",
+                theme: "material",
+                lineNumbers: true
+              }}
+              onChange={(editor, data, value) => {}}
+            />
+
+            {/* <div className="text-center">
               <iframe
                 src="https://python-ide-online.s3-website-us-east-1.amazonaws.com"
                 width="95%"
                 height="600"
               />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="row">
