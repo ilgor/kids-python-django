@@ -30,7 +30,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "codemirror": "^5.51.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
